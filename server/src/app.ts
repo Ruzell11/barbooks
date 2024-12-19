@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import router from "./routes";
 import rateLimit from "express-rate-limit";
 import config from "./config";
+import cors from 'cors';
 
 dotenv.config();
 
@@ -22,7 +23,7 @@ const limiter = rateLimit({
   statusCode: config.HTTP_STATUS_CODE.MANY_REQUEST, 
 });
 
-
+app.use(cors());
 app.use(limiter);
 
 app.use('/api', router);
