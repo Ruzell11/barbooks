@@ -1,4 +1,4 @@
-# Express JS TypeScript Project
+# SERVER
 
 This project is a basic Express.js application written in TypeScript. It is designed with a modular structure and implements dependency injection to make the code scalable, testable, and maintainable.
 
@@ -12,25 +12,7 @@ This project is a basic Express.js application written in TypeScript. It is desi
 
 ## Project Structure
 
-server/
-├── app/
-│   ├── app.ts              # Main entry point for the application
-│   ├── controllers/        # Controllers for handling requests
-│   │   └── GameController.ts
-│   ├── routes/             # Express route definitions
-│   │   └── gameRouter.ts
-│   ├── config/             # Configuration files
-│   │   └── config.ts
-├── tests/                  # Test files for the application
-│   ├── game-controllers/
-│   │   └── getAllGames.test.ts
-│   └── jest.config.js      # Jest configuration file
-├── .env                    # Environment variables file
-├── package.json            # Project metadata and dependencies
-├── tsconfig.json           # TypeScript configuration file
-├── jest.config.js          # Jest test configuration file
-└── README.md               # Project documentation
-
+![image](https://github.com/user-attachments/assets/1eb9d7d8-b671-4695-b956-eb092b8f0aee)
 
 
 
