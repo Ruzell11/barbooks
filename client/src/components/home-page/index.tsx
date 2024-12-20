@@ -1,11 +1,12 @@
 import React, { Suspense } from 'react';
-import LoadingSpinner from '../components/spinner';
+import LoadingSpinner from '../shared/spinner';
+
 
 // Lazy load the components
-const HomePageHeader = React.lazy(() => import("../components/home-page/header"));
-const HomePageFilterBar = React.lazy(() => import("../components/home-page/filter-bar"));
-const HomePageGameList = React.lazy(() => import("../components/home-page/game-list"));
-const HomePageProvider = React.lazy(() => import("../components/home-page/store"));
+const HomePageHeader = React.lazy(() => import("./header/index"));
+const HomePageFilterBar = React.lazy(() => import("../home-page/filter-bar"));
+const HomePageGameList = React.lazy(() => import("../home-page/game-list"));
+const HomePageProvider = React.lazy(() => import("../home-page/store"));
 
 
 export default function HomePage() {

@@ -54,3 +54,8 @@
   pointer-events: none;
 
 }
+
+.homepage__clear-icon {
+  cursor: pointer;
+
+}

@@ -1,34 +1,17 @@
 import React from 'react';
 import './index.css';
 import { useHomePageContext } from '../store';
-import LoadingSpinner from '../../spinner';
+import LoadingSpinner from '../../shared/spinner';
 import { Game } from '../../../interface/gameInterface';
-import { useQuery } from '@tanstack/react-query';
-import { getAllFilterGames, getAllGames } from '../services';
+import { Link } from 'react-router-dom';
 
 export default function HomePageGameList() {
-    const { platform, category, sortBy, categorySingle } = useHomePageContext() as any;
-
-    const queryGameList = useQuery(
-        ['games-list', platform, categorySingle, sortBy],
-        () => getAllGames(platform, categorySingle, sortBy),
-    );
-
-    const queryFilterGame = useQuery(
-        ['filter-games-list', platform, category, sortBy],
-        () => getAllFilterGames(platform, category, sortBy),
-        {
-          enabled: category.length > 1
-        }
-      );
-      
+    const { queryFilterGame, queryGameList, category, gameList } = useHomePageContext() as any;
 
 
     if (queryGameList.isLoading || (queryFilterGame.isLoading && category.length > 1)) {
         return <LoadingSpinner />;
     }
-
-    const gameList = category.length > 1 ? queryFilterGame.data : queryGameList.data;
 
     return (
         <div className="game-list">
@@ -44,8 +27,8 @@ export default function HomePageGameList() {
                             />
                             <div className="game-list__card-details">
                                 <p className="game-list__card-description">{game.shortDescription}</p>
-                                <a className="game-list__card-view-more">
-                                    View More  
+                                <Link to={`/game/${game.id}`} className="game-list__card-view-more">
+                                    View More
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="game-list__view-more-icon"
@@ -60,7 +43,7 @@ export default function HomePageGameList() {
                                     >
                                         <path d="M9 18l6-6-6-6" />
                                     </svg>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -72,5 +55,5 @@ export default function HomePageGameList() {
             )}
         </div>
     );
-    
+
 }

@@ -16,6 +16,7 @@ export default function FilterBarSortBy() {
                 value={sortBy}
                 onChange={handleSortByChange}
             >
+                   <option value="">Select Option</option>
                 <option value="release-date">Release Date</option>
                 <option value="alphabetical">Alphabetical</option>
                 <option value="relevance">Relevance</option>

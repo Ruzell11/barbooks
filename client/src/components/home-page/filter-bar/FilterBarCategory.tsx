@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHomePageContext } from "../store";
-import LoadingSpinner from "../../spinner";
+import LoadingSpinner from "../../shared/spinner";
 
 const FilterBarCategory = () => {
   const { queryCategoryList, handleSetCategory, category } = useHomePageContext() as any;

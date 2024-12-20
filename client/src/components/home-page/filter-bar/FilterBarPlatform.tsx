@@ -15,7 +15,6 @@ export default function FilterBarPlatform() {
                 className="filter-bar__platform"
                 value={platform}
                 onChange={handlePlatformChange}
-                defaultValue="all"
             >
                 <option value="">Select Platform</option>
                 <option value="all">All</option>

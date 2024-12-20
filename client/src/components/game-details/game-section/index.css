@@ -1,0 +1,147 @@
+
+.game-details__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    padding: 40px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+.game-details__wrapper {
+    display: flex;
+    gap: 30px;
+    flex-direction: row; 
+}
+
+
+.game-details__thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Thumbnail image */
+.game-details__thumbnail {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.game-details__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+.game-details__content h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+
+.game-details__content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.game-details__screenshots {
+    display: flex;
+    gap: 40px;
+    justify-content: flex-start;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.game-details__screenshot {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.game-details__wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.game-details__thumbnail-container {
+    flex-shrink: 0;
+
+}
+
+.game-details__content {
+    flex-grow: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .game-details__wrapper {
+        flex-direction: column; /* Stack thumbnail and content vertically */
+        align-items: center; /* Center-align content */
+    }
+
+    .game-details__thumbnail {
+        height: 200px;
+        width: 200px;
+    }
+
+    .game-details__content h1 {
+        font-size: 24px; /* Smaller title font size on mobile */
+    }
+
+    .game-details__content p {
+        font-size: 14px; /* Smaller paragraph font size */
+    }
+
+    .game-details__screenshot {
+        height: 200px;
+        width: 300px;
+    }
+}
+
+.game-details__href {
+    text-align: end;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #cccc;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+}
+
+
+/* Extra small devices (phones in portrait mode) */
+@media (max-width: 480px) {
+    .game-details__thumbnail {
+        height: 150px;
+        width: 150px;
+    }
+
+    .game-details__content h1 {
+        font-size: 20px; /* Even smaller title font size */
+    }
+
+    .game-details__content p {
+        font-size: 12px; /* Even smaller paragraph font size */
+    }
+
+    .game-details__screenshots {
+        flex-direction: column; /* Stack screenshots vertically */
+        gap: 5px; /* Reduce gap between screenshots */
+        justify-content: center;
+        align-items: center; /* Center-align screenshots */
+    }
+
+    .game-details__screenshot {
+        height: 150px;
+        width: 200px;
+    }
+}
