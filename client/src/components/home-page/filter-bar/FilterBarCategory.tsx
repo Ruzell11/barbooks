@@ -3,12 +3,14 @@ import { useHomePageContext } from "../store";
 import LoadingSpinner from "../../shared/spinner";
 
 const FilterBarCategory = () => {
-  const { queryCategoryList, handleSetCategory, category } = useHomePageContext() as any;
+  const { queryCategoryList, handleSetCategory } = useHomePageContext() as any;
   const [searchText, setSearchText] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
+    setShowDropdown(true); 
   };
 
   const handleCategorySelect = (category: string) => {
@@ -18,6 +20,7 @@ const FilterBarCategory = () => {
       handleSetCategory(category);
     }
     setSearchText("");
+    setShowDropdown(false); 
   };
 
   useEffect(() => {
@@ -25,13 +28,12 @@ const FilterBarCategory = () => {
     const categoryParam = searchParams.get('category');
 
     if (categoryParam) {
-        const categoriesFromUrl = categoryParam.split(',');
-        setSelectedCategories(categoriesFromUrl);
+      const categoriesFromUrl = categoryParam.split(',');
+      setSelectedCategories(categoriesFromUrl);
     } else {
-        setSelectedCategories([]);
+      setSelectedCategories([]);
     }
-}, [location.search]);
-
+  }, [location.search]);
 
   const handleCategoryRemove = (category: string) => {
     const updatedCategories = selectedCategories.filter((item) => item !== category);
@@ -39,15 +41,14 @@ const FilterBarCategory = () => {
     handleSetCategory(updatedCategories);
   };
 
-  
   if (queryCategoryList.isLoading) {
-    return <LoadingSpinner />
+    return <LoadingSpinner />;
   }
+
 
   const filteredCategories = queryCategoryList.data.filter(
     (category: string) => category.toLowerCase().includes(searchText.toLowerCase()) && !selectedCategories.includes(category)
   );
-
 
   return (
     <div className="filter-bar__wrapper">
@@ -60,7 +61,8 @@ const FilterBarCategory = () => {
           value={searchText}
           onChange={handleInputChange}
         />
-        {filteredCategories.length > 0 && (
+        {/* Show the dropdown only if there are filtered categories */}
+        {showDropdown && filteredCategories.length > 0 && (
           <ul className="filter-bar__dropdown">
             {filteredCategories.map((category: string) => (
               <li
