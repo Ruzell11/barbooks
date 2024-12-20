@@ -1,4 +1,4 @@
-# Project Name
+# Game List
 
 ## Overview
 This project showcases my coding skills and demonstrates the creation of a clean, scalable, and maintainable application using React. The components are organized in a modular way to improve reusability, maintainability, and clarity. This structure ensures that components can be easily managed, tested, and extended in future iterations.
