@@ -91,14 +91,28 @@ export default function HomePageProvider({ children }: HomePageProviderInterface
         }
     );
 
+    const handleClearFilters = () => {
+        setPlatform("");
+        setCategory([]);
+        setCategorySingle("");
+        setSortBy("");
+        setSearchValue("");
+
+        updateUrl({
+            platform: "",
+            category: "",
+            sortBy: "",
+            search: ""
+        });
+    };
+
+
 
     let gameList = category.length > 1 ? queryFilterGame.data : queryGameList.data;
 
     gameList = gameList?.filter(game =>
         game.title.toLowerCase().includes(searchValue.toLowerCase()) 
       );
-
-      console.log(gameList)
 
 
     useEffect(() => {
@@ -141,6 +155,7 @@ export default function HomePageProvider({ children }: HomePageProviderInterface
         categorySingle,
         gameList,
         searchValue,
+        handleClearFilters,
         handleSearchValue,
         handleSetPlatform,
         handleSetCategory,

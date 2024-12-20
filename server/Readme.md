@@ -29,6 +29,7 @@ To run this project, follow these steps:
     ```bash
     git clone <url>
     cd barbooks
+    cd server
     ```
 
 2. Install dependencies:

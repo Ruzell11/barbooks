@@ -11,7 +11,7 @@ const getAllGames = async (platform?: string, category?: string, sortBy?: string
     if (sortBy) params['sort-by'] = sortBy;
 
     // Send GET request with parameters
-    const response = await axios.get(`${config.API_URL}/games`, { params });
+    const response = await axios.get(`/api/games`, { params });
     return response.data;
   } catch (error) {
     if (error instanceof Error) {
@@ -25,7 +25,7 @@ const getAllGames = async (platform?: string, category?: string, sortBy?: string
 
 const getAllCategories = async () => {
     try {
-      const response = await axios.get(`${config.API_URL}/games/categories`);
+      const response = await axios.get(`/api/games/categories`);
       return response.data;
     } catch (error) {
       if (error instanceof Error) {
@@ -53,7 +53,7 @@ const getAllFilterGames = async (platform?: string, category?: string[], sortBy?
     if (sortBy) params['sort-by'] = sortBy;
 
     // Send GET request with parameters
-    const response = await axios.get(`${config.API_URL}/games/filter`, { params });
+    const response = await axios.get(`/api/games/filter`, { params });
     return response.data;
   } catch (error) {
     if (error instanceof Error) {

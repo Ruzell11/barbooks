@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import LoadingSpinner from '../shared/spinner';
+import ClearFilter from './game-list/ClearFilter';
 
 
 // Lazy load the components
@@ -16,6 +17,7 @@ export default function HomePage() {
                 <HomePageProvider>
                     <HomePageHeader />
                     <HomePageFilterBar />
+                    <ClearFilter/>
                     <HomePageGameList />
                 </HomePageProvider>
             </Suspense>

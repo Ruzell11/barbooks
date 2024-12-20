@@ -19,7 +19,7 @@
 
 .game-list__wrapper {
     display: flex;
-    gap: 24px   ;
+    gap: 24px;
     width: 100%;
 }
 
@@ -48,7 +48,6 @@
     margin: 0 0 auto;
 }
 
-
 .game-list__card-view-more {
     display: flex;
     align-items: center;
@@ -64,5 +63,59 @@
 
 .game-list__card-view-more:hover {
     opacity: 0.8;
+}
 
+@media (max-width: 768px) {
+    .game-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .game-list__card {
+        padding: 12px;
+    }
+
+    .game-list__card-thumbnail {
+        width: 150px;
+        height: 150px;
+    }
+
+    .game-list__card-name {
+        font-size: 24px;
+    }
+
+    .game-list__card-description {
+        font-size: 14px;
+    }
+
+    .game-list__card-view-more {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .game-list__card-thumbnail {
+        width: 120px;
+        height: 120px;
+    }
+
+    .game-list__card-name {
+        font-size: 20px;
+    }
+
+    .game-list__card-description {
+        font-size: 12px;
+    }
+
+    .game-list__card-view-more {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
 }

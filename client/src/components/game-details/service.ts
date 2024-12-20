@@ -1,10 +1,9 @@
 import axios from 'axios';
-import { config } from '../../config';
 
 
 const getGameDetails = async (id: string) => {
     try {
-      const response = await axios.get(`${config.API_URL}/games/${id}`);
+      const response = await axios.get(`/api/games/${id}`);
       return response.data;
     } catch (error) {
       if (error instanceof Error) {
