@@ -16,12 +16,7 @@ The following libraries and tools are used in this project:
 ## Project Structure
 Each major component has its own directory, with the following structure:
 
-components/ 
-component-name/ 
-├── index.tsx # Main component file 
-├── service.ts # API calls or business logic related to this component (if applicable) 
-  child-component/ 
-├── index.tsx # Child component's logic └── index.css # Styles for the child component
+![image](https://github.com/user-attachments/assets/8d253d31-775a-4bf1-9cd2-0e025c702f46)
 
 
 ## Benefits of This Structure
